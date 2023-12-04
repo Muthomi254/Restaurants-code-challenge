@@ -21,7 +21,6 @@
 #         return self.restaurant
 
 
-
 class Review:
     all_reviews = []
 
@@ -43,4 +42,7 @@ class Review:
 
     def get_restaurant(self):
         return self.restaurant
+
+    def __str__(self):
+        return f"Review(Customer: {self.customer.full_name()}, Restaurant: {self.restaurant.get_name()}, Rating: {self.rating_value})"
 

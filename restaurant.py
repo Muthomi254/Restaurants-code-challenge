@@ -45,8 +45,11 @@
 #     def add_review(self, review):
 #         self.review_list.append(review)
 
+# restaurant.py
 
-from review import Review  
+from review import Review 
+from customers import Customer
+ 
 
 class Restaurant:
     all_restaurants = []
@@ -66,9 +69,16 @@ class Restaurant:
     def get_reviews(self):  
         return self.review_list  
 
-    def customers(self):
-        return list(set([review.customer for review in self.review_list]))
-
     def add_review(self, review):
         self.review_list.append(review)
 
+    def customers(self):
+        return list(set([review.get_customer() for review in self.get_reviews()]))
+
+    def display_info(self):
+        print(f"Restaurant Name: {self.get_name()}")
+        print(f"Number of Reviews: {len(self.get_reviews())}")
+        print(f"Customers: {', '.join([customer.full_name() for customer in self.customers()])}")
+
+    def __str__(self):
+        return f"Restaurant(Name: {self.get_name()}, Reviews: {len(self.get_reviews())}, Customers: {', '.join([customer.full_name() for customer in self.customers()])})"
