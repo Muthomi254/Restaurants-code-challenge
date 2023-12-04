@@ -47,8 +47,8 @@
 
 # restaurant.py
 
-from review import Review 
-from customers import Customer
+from lib.review import Review 
+from lib.customers import Customer
  
 
 class Restaurant:

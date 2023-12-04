@@ -1,6 +1,6 @@
-from review import Review  
-from customers import Customer
-from restaurant import Restaurant
+from lib.review import Review  
+from lib.customers import Customer
+from lib.restaurant import Restaurant
 
 # Example usage:
 customer1 = Customer("John", "Doe")
@@ -23,8 +23,9 @@ print(restaurant2)
 
 # Print specific details using individual methods
 print(f"\n{customer1.full_name()} has reviewed the following restaurants: {customer1.restaurants()}")
+print(f"{restaurant1.get_name()} has been reviewed by the following customers: {restaurant1.customers()}")
 
 # Display all reviews for a specific restaurant
-print(f"\nReviews for {restaurant2.get_name()}:")
+print(f"\nReviews for {restaurant1.get_name()}:")
 for review in restaurant1.get_reviews():
     print(f"  - Review by {review.get_customer().full_name()}: Rating - {review.get_rating()}")
