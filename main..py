@@ -3,11 +3,11 @@ from customers import Customer
 from restaurant import Restaurant
 
 # Example usage:
-customer1 = Customer("John", "Doe")
-customer2 = Customer("Jane", "Smith")
+customer1 = Customer("Kamande","Wa Kioi")
+customer2 = Customer("Nganga", "Duma")
 
-restaurant1 = Restaurant("Cafe XYZ")
-restaurant2 = Restaurant("Pizza Palace")
+restaurant1 = Restaurant("Base ya Mutura")
+restaurant2 = Restaurant("Kwa Mathee")
 
 customer1.add_review(restaurant1, 4)
 customer1.add_review(restaurant2, 5)
@@ -23,7 +23,7 @@ print(restaurant2)
 
 # Print specific details using individual methods
 print(f"\n{customer1.full_name()} has reviewed the following restaurants: {customer1.restaurants()}")
-print(f"{restaurant1.get_name()} has been reviewed by the following customers: {restaurant1.customers()}")
+print(f"{restaurant1.get_name()} has been reviewed by the following customers: {[restaurant1.customers()]}")
 
 print(f"\n{customer2.full_name()} has reviewed the following restaurants: {customer2.restaurants()}")
 print(f"{restaurant2.get_name()} has been reviewed by the following customers: {restaurant2.customers()}")
